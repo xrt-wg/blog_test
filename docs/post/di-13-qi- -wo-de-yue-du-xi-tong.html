@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://images--1.oss-cn-beijing.aliyuncs.com/pic2/1.jpg"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="## 一、为什么想构建自己的 阅读系统？
+
+1. 首先肯定是希望自己能够更加高效地读更多的书，其次不想受到这个过程中太多的琐碎细节所打扰，想把尽可能多的精力放在读和思考上面
+
+2. 为了使自己的阅读更加稳定，把阅读当作一个持续长期的事情来对待
+
+3. 反过来让自己更加认真对待阅读这一件事情
+
+4. 系统是一个具备弹性和稳定的高效管理方法
+
+## 二、我的阅读系统介绍
+
+### Ⅰ、两个对象--书和工具
+
+![image-20230909201736550](https://images--1.oss-cn-beijing.aliyuncs.com/pic2/%E4%B8%A4%E4%B8%AA%E5%AF%B9%E8%B1%A1.png '连个')
+
+<center>图示1.两个对象</center>
+
+每个有一定阅读基础的人最开始几乎就是在这两者之间晃动，找书，在哪里阅读？在哪里标记？等等，但随着自己的阅读需求的提升，我们希望这两者之间能够更高效地互动，我们也能更方便地管理它们。">
+<meta property="og:title" content="第13期 我的阅读系统">
+<meta property="og:description" content="## 一、为什么想构建自己的 阅读系统？
+
+1. 首先肯定是希望自己能够更加高效地读更多的书，其次不想受到这个过程中太多的琐碎细节所打扰，想把尽可能多的精力放在读和思考上面
+
+2. 为了使自己的阅读更加稳定，把阅读当作一个持续长期的事情来对待
+
+3. 反过来让自己更加认真对待阅读这一件事情
+
+4. 系统是一个具备弹性和稳定的高效管理方法
+
+## 二、我的阅读系统介绍
+
+### Ⅰ、两个对象--书和工具
+
+![image-20230909201736550](https://images--1.oss-cn-beijing.aliyuncs.com/pic2/%E4%B8%A4%E4%B8%AA%E5%AF%B9%E8%B1%A1.png '连个')
+
+<center>图示1.两个对象</center>
+
+每个有一定阅读基础的人最开始几乎就是在这两者之间晃动，找书，在哪里阅读？在哪里标记？等等，但随着自己的阅读需求的提升，我们希望这两者之间能够更高效地互动，我们也能更方便地管理它们。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://talk.wgexplorer.com/post/di-13-qi-%20-wo-de-yue-du-xi-tong.html">
+<meta property="og:image" content="https://images--1.oss-cn-beijing.aliyuncs.com/pic2/1.jpg">
+<title>第13期 我的阅读系统</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">第13期 我的阅读系统</h1>
+<div class="title-right">
+    <a href="http://talk.wgexplorer.com" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/xrt-wg/blog_test/issues/17" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h2>一、为什么想构建自己的 阅读系统？</h2>
+<ol>
+<li>
+<p>首先肯定是希望自己能够更加高效地读更多的书，其次不想受到这个过程中太多的琐碎细节所打扰，想把尽可能多的精力放在读和思考上面</p>
+</li>
+<li>
+<p>为了使自己的阅读更加稳定，把阅读当作一个持续长期的事情来对待</p>
+</li>
+<li>
+<p>反过来让自己更加认真对待阅读这一件事情</p>
+</li>
+<li>
+<p>系统是一个具备弹性和稳定的高效管理方法</p>
+</li>
+</ol>
+<h2>二、我的阅读系统介绍</h2>
+<h3>Ⅰ、两个对象--书和工具</h3>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/55380b9a5578b6b1a5a40d7fd660c14ddf3fa198e23c6c780847f4e4d1f1e1e0/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f2545342542382541342545342542382541412545352541462542392545382542312541312e706e67"><img src="https://camo.githubusercontent.com/55380b9a5578b6b1a5a40d7fd660c14ddf3fa198e23c6c780847f4e4d1f1e1e0/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f2545342542382541342545342542382541412545352541462542392545382542312541312e706e67" alt="image-20230909201736550" title="连个" data-canonical-src="https://images--1.oss-cn-beijing.aliyuncs.com/pic2/%E4%B8%A4%E4%B8%AA%E5%AF%B9%E8%B1%A1.png" style="max-width: 100%;"></a></p>
+图示1.两个对象
+<p>每个有一定阅读基础的人最开始几乎就是在这两者之间晃动，找书，在哪里阅读？在哪里标记？等等，但随着自己的阅读需求的提升，我们希望这两者之间能够更高效地互动，我们也能更方便地管理它们。那最开始我们需要做的就是对它们有一个大致的认识和定位，就像图中所描述的那样，所有书首先对我来说就是有未知（即我都不知道的书）和想读的书两类，而每一个工具根据我的需求和它们的功能都有一个清晰的定位。当然这样清晰的划分不是一蹴而就的，我只是想说明在通过阅读系统更高效地进行管理之前，我们应该对于这两个我们经常直接接触的对象有一个自己的大致划分和定位，也是我们构建系统的基础。</p>
+<h3>Ⅱ、系统逻辑--阅读流</h3>
+<p>前面介绍的两个对象--书和工具，大致说明了在阅读系统我们会面临的两个基本实体，而这里介绍的‘阅读流’则是从过程的角度说明如何通过我们的需求将书和工具有机地串联互动起来。</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/bc2c7c0768c285eb1c5928475ea4f94142445b0fc7d30d4d92bd8859a64dd677/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f2545392539382538352545382541462542422545362542352538312e706e67"><img src="https://camo.githubusercontent.com/bc2c7c0768c285eb1c5928475ea4f94142445b0fc7d30d4d92bd8859a64dd677/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f2545392539382538352545382541462542422545362542352538312e706e67" alt="image-20230909213905362" data-canonical-src="https://images--1.oss-cn-beijing.aliyuncs.com/pic2/%E9%98%85%E8%AF%BB%E6%B5%81.png" style="max-width: 100%;"></a></p>
+图示2.阅读流
+<h4>1. 发现书</h4>
+<p>在这一步我所做的就是尽可能去发现一些我感兴趣的或者我根本不知道的但是值得阅读的书，现在其实大致有两部分来源，第一便是书店或者图书馆，第二是一些我平时收集整理的一些其他来源，比如某个播客，某个阅读类博主，某个你敬佩的人的推荐书单等等。这两部分就是我发现书的主要途径，将那些我未知的书变成我想读但未读的书。</p>
+<h4>2. 组建未读书库</h4>
+<p>在上一步发现了更多的想读的书之后，我们肯定是无法将它们短期内立即读完的，所以我们需要组建一个未读书库来对它们进行一个管理，既可以对如此多想读的书有大致的了解，同时也可以为制定自己的阅读计划做一个初步准备。我在这一步主要完成的就是将那些发现的书在Calibre里面做一个初步的标记（如下图），最重要的是首先给它一个标签，不一定要最准确，但至少要代表你对这本书的一个初步认识，不然随着书越来越多，这个未读书库也会越来越混乱，也失去了整理的意义。</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/514c1787127443071a5bdd14ac12b6b21906d6a48e39c4d913016fedf30bda94/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f2545342542392541362545372542312538442545362541302538372545382541452542302e706e67"><img src="https://camo.githubusercontent.com/514c1787127443071a5bdd14ac12b6b21906d6a48e39c4d913016fedf30bda94/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f2545342542392541362545372542312538442545362541302538372545382541452542302e706e67" alt="image-20230910141243175" data-canonical-src="https://images--1.oss-cn-beijing.aliyuncs.com/pic2/%E4%B9%A6%E7%B1%8D%E6%A0%87%E8%AE%B0.png" style="max-width: 100%;"></a></p>
+图示3.书籍标记
+<p>当然，依据我的经历最开始由于接触的书还不太多，要组建一个清晰完整的标签体系并不容易，但随着书的不断增多，你可以慢慢调整这些标签，并不是一步到位的，当这些标签进一步细化，自己对于书的认识便会形成一个自己的初步视角，对某些书大致属于某个类别有个大致的了解。整个未读书库相当于你对书这一片海洋的认知边界，能够对自己的认知有限性有个较为直观的认识，那些从未出现在你标签体系中的类别就是自己从未涉足过的领域。</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/b8fbac18bd088b9a193068710d917a1b6ebf2f93e1f85932ff44eeb06b9b0cb8/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f696d6167652d32303233303931303134333635383734382e706e67"><img src="https://camo.githubusercontent.com/b8fbac18bd088b9a193068710d917a1b6ebf2f93e1f85932ff44eeb06b9b0cb8/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f696d6167652d32303233303931303134333635383734382e706e67" alt="image-20230910143658748" data-canonical-src="https://images--1.oss-cn-beijing.aliyuncs.com/pic2/image-20230910143658748.png" style="max-width: 100%;"></a></p>
+图示4.标签体系
+<h4>3. 制定阅读计划</h4>
+<p>前面的未读书库相当于自己的瞭望塔，帮自己找到和积累了足够多的感兴趣的书，下一步便是如何读的问题？制定阅读计划首先确定读什么，要让计划顺利执行，就得有一个阅读的目的或者方向，对我来说可以分为两类：随机阅读和主题阅读，前者主要强调放松和即时的兴趣，后者主要强调对某一主题的深入了解。依据这两个方向我会在自己的未读书库中找到相应的阅读书籍，当然未读书库往往并不会包含足够的适合某个主题阅读的书籍，这就需要我们根据这个主题再做一些额外扩充。确定好了读什么，下一步就是根据自己的情况设定合适的阅读量和时间段，然后开始执行。</p>
+<ul>
+<li>读什么？</li>
+<li>找资源</li>
+</ul>
+<h4>4. 阅读管理</h4>
+<p>在执行阅读计划的时候，我们需要对自己的阅读进度进行管理，避免因为阅读计划本身的细节管理造成过多的精力耗散，如下图，只需定期对自己的阅读书籍进行一个标记即可清晰看到自己阅读计划的大致执行状况。同时我们还需对自己的阅读计划作出一些实时调整，使它与自己更加契合，也能够更加顺畅地进行下去。</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/a023fe5e94e1e2b789174fb65b0257128cfb2fcb7822c15da0f95d07ac2fa255/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f696d6167652d32303233303931303134353732303133312e706e67"><img src="https://camo.githubusercontent.com/a023fe5e94e1e2b789174fb65b0257128cfb2fcb7822c15da0f95d07ac2fa255/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f696d6167652d32303233303931303134353732303133312e706e67" alt="image-20230910145720131" data-canonical-src="https://images--1.oss-cn-beijing.aliyuncs.com/pic2/image-20230910145720131.png" style="max-width: 100%;"></a></p>
+图示5.阅读管理
+<h4>5. 阅读笔记</h4>
+<p>如何做阅读笔记是一个十分开放和个体差异化很大的问题，但我觉得最重要的两点是：明白自己做阅读笔记的目的；不要追求一步到位，而是逐步调整形成自己的阅读笔记框架。</p>
+<p>对于我来说，我的目的是希望自己不只是停留在文字的表面而是有更深入的思考，其次通过发散和连接将不同的阅读结合起来，另外我相信读完一本书只是一个开始。</p>
+<p>下图是我目前的阅读笔记框架，我只讲一下那几个对我来说比较特殊的模块：</p>
+<ul>
+<li>白板导图：当我们读完一本书，脑海中会浮现出我们对于这本书理解认识的一个大致轮廓，当然也会有一些其他我们联想到的东西，很多时候这样的图景是很难一下子通过文字或者其他方式表述出来的，但是一支笔加一张A4纸就刚刚好，随着内容的慢慢填充我们又会发现新的联系，会看到一个逐渐清晰的认识，而我们通过这样一副白板导图很容易会想起当时的思考情景。</li>
+<li>总结和阐述：受原子笔记的启发，就是在原文表达的基础上再用自己的话将其表达出来，不在于说的有多么准确，关键是呈现出自己的理解和思考，形成一个个原子笔记，方便之后的查看和索引连接</li>
+<li>发散和连接：再上面的基础上，我们可以将它们与已有的内容关联起来，或者发散出去看到新的东西</li>
+<li>阅读分享：这一部分算是我自己的一个小小实践，如何向别人分享一本书？不是简单的介绍，在写阅读分享的时候，那些在在阅读中对我影响最大的部分会呈现出来，这其实算一个这本书的一趟回顾之旅，不仅能够重温那些令人沉思的片段，或许也能让其他人带着好奇走进这本书中来。</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/ffd0b680e4ae993da67e3978fb5abea607850cfa9f8ac5a1cb080b814d54cf9a/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f696d6167652d32303233303931303135313232313136332e706e67"><img src="https://camo.githubusercontent.com/ffd0b680e4ae993da67e3978fb5abea607850cfa9f8ac5a1cb080b814d54cf9a/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f696d6167652d32303233303931303135313232313136332e706e67" alt="image-20230910151221163" data-canonical-src="https://images--1.oss-cn-beijing.aliyuncs.com/pic2/image-20230910151221163.png" style="max-width: 100%;"></a></p>
+图示6.阅读笔记框架
+<h3>Ⅲ、系统实体--使用Notion构建实体系统</h3>
+<p>前面讲了整个阅读系统的逻辑部分，也就是阅读流，从发现书到阅读笔记的整个过程，这是阅读系统的运作流程，而这里将简要介绍一下系统实体，即如何管理整个系统？</p>
+<p>如下图所示，主要分为三个部分：</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/914a9a0062b84ada638d008198938dbc0dae56733742cbf1acf70eefd9867500/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f696d6167652d32303233303931303136303233323936372e706e67"><img src="https://camo.githubusercontent.com/914a9a0062b84ada638d008198938dbc0dae56733742cbf1acf70eefd9867500/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f696d6167652d32303233303931303136303233323936372e706e67" alt="image-20230910160232967" data-canonical-src="https://images--1.oss-cn-beijing.aliyuncs.com/pic2/image-20230910160232967.png" style="max-width: 100%;"></a></p>
+图示6.系统实体导图
+<ul>
+<li>系统版本更新记录：主要负责记录整个系统全局结构，还有各个子模块的更新，比如我的阅读笔记框架的版本迭代等等。</li>
+</ul>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/5ccb4c8dba6bdcdc861a81ff5d7af70115f8e1aa0ece91f7815fcad0c0081718/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f696d6167652d32303233303931303135353734353634302e706e67"><img src="https://camo.githubusercontent.com/5ccb4c8dba6bdcdc861a81ff5d7af70115f8e1aa0ece91f7815fcad0c0081718/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f696d6167652d32303233303931303135353734353634302e706e67" alt="image-20230910155745640" data-canonical-src="https://images--1.oss-cn-beijing.aliyuncs.com/pic2/image-20230910155745640.png" style="max-width: 100%;"></a></p>
+图示7.阅读笔记版本迭代
+<ul>
+<li>
+<p>管理：主要负责阅读计划的制定和阅读进度的管理</p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/115d406b51537d73a28809e57f1a9af314becc0b5c1bd60e9aec71c3c6230f80/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f696d6167652d32303233303931303135353935333138352e706e67"><img src="https://camo.githubusercontent.com/115d406b51537d73a28809e57f1a9af314becc0b5c1bd60e9aec71c3c6230f80/68747470733a2f2f696d616765732d2d312e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f706963322f696d6167652d32303233303931303135353935333138352e706e67" alt="image-20230910155953185" data-canonical-src="https://images--1.oss-cn-beijing.aliyuncs.com/pic2/image-20230910155953185.png" style="max-width: 100%;"></a></p>
+图示8.阅读计划
+</li>
+<li>
+<p>运行&amp;维护：拿方法部分来说，我可能会尝试不同的方式来使自己的每天阅读时间稳定下来，或者通过某个习惯来带动整个系统的运转，而这些的目标就是对整个系统进行维护，使其更好地运行。</p>
+</li>
+</ul>
+<h2>三、其他问题</h2>
+<ol>
+<li>
+<p>工具的使用</p>
+<ul>
+<li>不要将过多的精力放在捣鼓各种工具上，关键是看清楚自己的需求，选择最适合自己的工具</li>
+<li>极简原则，能不要的都不要，主要是看是否真的对自己的阅读有实质性帮助</li>
+</ul>
+</li>
+<li>
+<p>阅读阶段</p>
+<p>每个人的阅读经历不同，处在不同的阶段不要贸然拿自己跟别人比较，更重要的是看清自己，多向别人吸收借鉴，不是全盘照抄。可能你现在正处于培养阅读兴趣的阶段，还没有必要来构建一个系统，如果非要做反倒打压了自己的兴趣，如果你已经是有自己稳定阅读习惯的人，那或许可以慢慢试着来捣鼓一下，但遇到各种问题也不要影响了自己享受阅读本身的乐趣。所以人人都不同，对阅读的理解和认识不同，其他人包括我都只能提供一种经历或者说一种可能的路径，本质还是在于构建更加适合自己的方式</p>
+</li>
+<li>
+<p>交流</p>
+<p>与不同的阅读者交流，我们能够让彼此的阅读面交融碰撞，借助别人的认识和介绍我们能够更加容易地迈入一个新的阅读领地，我们也能在分享中再次回顾自己的阅读收获。另外在大家开放的经验分享中，我们能够更轻松地摆脱一些阅读之旅中遇到地困境，比如某个工具的使用，寻找书籍资源，某个领域的入门读物等等，这也让我们可以将尽可能的精力投入到阅读和思考中去。</p>
+</li>
+</ol>
+</div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="http://talk.wgexplorer.com">aGeng's Talk</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","xrt-wg/blog_test");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
