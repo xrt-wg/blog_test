@@ -1,6 +1,6 @@
-# aGeng's Talk :link: http://talk.wgexplorer.com 
-### :page_facing_up: [17](http://talk.wgexplorer.com/tag.html) 
+# aGeng's Talk :link: https://xrt-wg.github.io/blog_test 
+### :page_facing_up: [17](https://xrt-wg.github.io/blog_test/tag.html) 
 ### :speech_balloon: 0 
 ### :hibiscus: 19890 
-### :alarm_clock: 2024-09-16 18:48:01 
+### :alarm_clock: 2025-06-18 11:57:26 
 ### Powered by :heart: [Gmeek](https://github.com/Meekdai/Gmeek)

@@ -424,7 +424,7 @@
 
 <!-- ##{'timestamp':1688201999}## -->。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://talk.wgexplorer.com/post/WordPress-bo-ke-da-jian-zhi-nan.html">
+<meta property="og:url" content="https://xrt-wg.github.io/blog_test/post/WordPress-bo-ke-da-jian-zhi-nan.html">
 <meta property="og:image" content="https://images--1.oss-cn-beijing.aliyuncs.com/pic2/1.jpg">
 <title>WordPress博客搭建指南</title>
 <link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
@@ -471,7 +471,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="header">
 <h1 class="postTitle">WordPress博客搭建指南</h1>
 <div class="title-right">
-    <a href="http://talk.wgexplorer.com" id="buttonHome" class="btn btn-invisible circle" title="首页">
+    <a href="https://xrt-wg.github.io/blog_test" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
             <path id="pathHome" fill-rule="evenodd"></path>
         </svg>
@@ -609,7 +609,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     server {
        listen <span class="pl-c1">80</span>;
        server_name blog.wgexplorer.com;
-       rewrite ^(<span class="pl-c1">.</span>*) https://<span class="pl-s1"><span class="pl-c1">$</span>host</span><span class="pl-c1">$</span><span class="pl-c1">1</span> permanent;
+       rewrite ^(<span class="pl-c1">.</span>*) https:<span class="pl-c">//$host$1 permanent;</span>
     }
 
     server {
@@ -624,19 +624,19 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
         <span class="pl-c"># ssl验证相关配置</span>
         ssl_session_timeout  <span class="pl-c1">5</span>m;    <span class="pl-c">#缓存有效期</span>
-        ssl_ciphers <span class="pl-c1">ECDHE</span>-<span class="pl-c1">RSA</span>-<span class="pl-c1">AES128</span>-<span class="pl-c1">GCM</span>-<span class="pl-c1">SHA256</span>:<span class="pl-c1">ECDHE</span>:<span class="pl-c1">ECDH</span>:<span class="pl-c1">AES</span>:<span class="pl-c1">HIGH</span>:!<span class="pl-c1">NULL</span>:!aNULL:!<span class="pl-c1">MD5</span>:!<span class="pl-c1">ADH</span>:!<span class="pl-c1">RC4</span>;    <span class="pl-c">#加密算法</span>
-        ssl_protocols <span class="pl-v">TLSv1</span> <span class="pl-v">TLSv1</span>.<span class="pl-c1">1</span> <span class="pl-v">TLSv1</span>.<span class="pl-c1">2</span>;    <span class="pl-c">#安全链接可选的加密协议</span>
+        ssl_ciphers <span class="pl-c1">ECDHE</span>-<span class="pl-c1">RSA</span>-<span class="pl-c1">AES128</span>-<span class="pl-c1">GCM</span>-<span class="pl-c1">SHA256</span>:<span class="pl-c1">ECDHE</span>:<span class="pl-c1">ECDH</span>:<span class="pl-c1">AES</span>:<span class="pl-c1">HIGH</span>:!NULL:!aNULL:!<span class="pl-c1">MD5</span>:!<span class="pl-c1">ADH</span>:!<span class="pl-c1">RC4</span>;    <span class="pl-c">#加密算法</span>
+        ssl_protocols TLSv1 TLSv1.<span class="pl-c1">1</span> TLSv1.<span class="pl-c1">2</span>;    <span class="pl-c">#安全链接可选的加密协议</span>
         ssl_prefer_server_ciphers off;   <span class="pl-c">#使用服务器端的首选算法</span>
         location / {
-                proxy_pass http://<span class="pl-c1">127.0</span>.<span class="pl-c1">0.1</span>:<span class="pl-c1">8080</span>;
+                proxy_pass http:<span class="pl-c">//127.0.0.1:8080;</span>
                 proxy_redirect  off;
-                proxy_set_header <span class="pl-v">Host</span> <span class="pl-s1"><span class="pl-c1">$</span>host</span>;
-                proxy_set_header <span class="pl-v">X</span>-<span class="pl-v">Real</span>-<span class="pl-c1">IP</span> <span class="pl-s1"><span class="pl-c1">$</span>remote_addr</span>;
-                proxy_set_header <span class="pl-v">X</span>-<span class="pl-v">Forwarded</span>-<span class="pl-v">For</span> <span class="pl-s1"><span class="pl-c1">$</span>proxy_add_x_forwarded_for</span>;
-                proxy_set_header <span class="pl-v">X</span>-<span class="pl-v">Forwarded</span>-<span class="pl-v">Host</span> <span class="pl-s1"><span class="pl-c1">$</span>server_name</span>;
-                proxy_set_header <span class="pl-v">X</span>-<span class="pl-v">Forwarded</span>-<span class="pl-v">Proto</span> https;
-                proxy_set_header <span class="pl-v">Upgrade</span> <span class="pl-s1"><span class="pl-c1">$</span>http_upgrade</span>;
-                proxy_set_header <span class="pl-v">Connection</span> <span class="pl-s">"<span class="pl-s">upgrade</span>"</span>;
+                proxy_set_header Host <span class="pl-s1"><span class="pl-c1">$</span>host</span>;
+                proxy_set_header X-Real-<span class="pl-c1">IP</span> <span class="pl-s1"><span class="pl-c1">$</span>remote_addr</span>;
+                proxy_set_header X-Forwarded-For <span class="pl-s1"><span class="pl-c1">$</span>proxy_add_x_forwarded_for</span>;
+                proxy_set_header X-Forwarded-Host <span class="pl-s1"><span class="pl-c1">$</span>server_name</span>;
+                proxy_set_header X-Forwarded-Proto https;
+                proxy_set_header Upgrade <span class="pl-s1"><span class="pl-c1">$</span>http_upgrade</span>;
+                proxy_set_header Connection <span class="pl-s">"<span class="pl-s">upgrade</span>"</span>;
                 proxy_read_timeout <span class="pl-c1">86400</span>;
                 
         }
@@ -730,7 +730,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="comments" id="comments"></div>
 
 </div>
-    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="http://talk.wgexplorer.com">aGeng's Talk</a></div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://xrt-wg.github.io/blog_test">aGeng's Talk</a></div>
 <div id="footer2">
     <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
 </div>
